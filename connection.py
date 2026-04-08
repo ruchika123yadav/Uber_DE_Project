@@ -7,7 +7,7 @@ from azure.eventhub import EventHubProducerClient, EventData
 import logging
 from dotenv import load_dotenv
 load_dotenv()  # Load environment variables from .env file
-import os
+import os 
 
 # Pulling Data Generator Function
 from data import generate_uber_ride_confirmation
