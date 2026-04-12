@@ -1,0 +1,29 @@
+{
+	"name": "storageaccount",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageLinked",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"P_fileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@{dataset().P_fileName}.json",
+					"type": "Expression"
+				},
+				"folderPath": "data",
+				"fileSystem": "githubdata"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

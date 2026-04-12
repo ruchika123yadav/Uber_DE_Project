@@ -1,0 +1,9 @@
+{
+	"name": "Uber-ADF-ruchi",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a05c9b28-69cc-4b0c-b7c0-863651b39179",
+		"tenantId": "849f6e0c-93b2-44e5-a7cd-f6ee61451248"
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"name": "gitHub_Data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GithubLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_fileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "ruchika123yadav/Uber_DE_Project/refs/heads/main/Data/@{dataset().p_fileName}",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

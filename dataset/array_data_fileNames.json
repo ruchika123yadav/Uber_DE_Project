@@ -1,0 +1,27 @@
+{
+	"name": "array_data_fileNames",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageLinked",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "files_array.json",
+				"fileSystem": "dataarray"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"file": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
