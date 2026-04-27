@@ -4,7 +4,7 @@ This project demonstrates a production-grade Modern Data Lakehouse architecture 
 # 🏗 Architecture Diagram
 The pipeline follows a robust flow: 
 **Event Hub/GitHub ➡️ Azure Data Factory ➡️ ADLS Gen2 ➡️ Azure Databricks (DLT) ➡️ Gold Tables**
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 # 🛠 Tech Stack
 * **Cloud Provider:** Microsoft Azure
@@ -23,8 +23,8 @@ I built a custom Python application that simulates an Uber ride booking UI. When
 
 * **Connectivity:** Used AMQP over WebSockets in the Python application to bypass corporate firewalls.
 
-![alt text](eventHub.png)
-![alt text](image-2.png)
+![alt text](img/eventHub.png)
+![alt text](img/image-2.png)
 
 2. ## Metadata-Driven Batch Ingestion (ADF)
 To handle historical data and mapping files (Cities, Cancellation reasons, etc.) stored in GitHub, I built a Generic Metadata-Driven Pipeline in ADF.
@@ -32,8 +32,8 @@ To handle historical data and mapping files (Cities, Cancellation reasons, etc.)
 * **Automation:** Instead of hardcoding filenames, I used a Lookup Activity to fetch file lists and a For-Each Loop to dynamically ingest data into the Bronze container.
 
 * **Parameters:** Utilized ADF parameters to make the pipeline reusable for any new dataset.
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](img/image-3.png)
+![alt text](img/image-4.png)
 
 3. ## The Medallion Processing (Databricks & DLT)
 I implemented the processing logic using Spark Declarative Pipelines (DP) to ensure data reliability and schema enforcement.
@@ -60,9 +60,9 @@ Transformed the OBT into a Star Schema for analytical reporting:
 * **Dimension Tables:** dim_passenger, dim_driver, dim_payment, dim_booking.
 
 * SCD Type 2: Implemented Slowly Changing Dimension (Type 2) for dim_location to track historical changes in city/region boundaries over time.
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](img/image-5.png)
+![alt text](img/image-6.png)
+![alt text](img/image-7.png)
 
 
 ##  Orchestration & Efficiency
